@@ -23,24 +23,29 @@
         position:relative;
         z-index:10;
         }   
+       
        .menu a{
             font-family: Arial, sans-serif;  /* tambahkan ini */
             text-decoration:none;
             text-align:center;
             color:#1a1a1a;
             font-size:16px;
-            flex:1;
+            flex: none; 
+            width: auto;          /* Lebar mengikuti isi */
+            min-width: 80px;
             text-align:center;
             letter-spacing:0.5px;
-            font-weight:500;
-            padding:8px 18px; /* mengatur ukuran tombol */
-            border-radius:30px; /* membuat oval */
-            border:2px solid rgb(143,125,96);
+            font-weight:600;
+            padding:10px 14px; /* mengatur ukuran tombol */
+            border-radius:20px; /* membuat oval */
+            border:1px solid rgb(143,125,96);
             background:linear-gradient(135deg,#8c6a2f,#caa24c,#6f5223);
-            text-shadow:0 1px 2px rgba(255,255,255,0.4);
+            text-shadow:0 1px 1px rgba(255,255,255,0.4);
             transition:0.3s;
             display:inline-block;
         }
+
+     
 
         .hero{
             background:url("bg-undangan.jpg") center/cover no-repeat;
@@ -51,20 +56,23 @@
             justify-content:center;
             align-items:center;
         }
+        
        .menu{
             width:100%;
             background: rgba(90,60,30,0.7); /* sama dengan isi */
             backdrop-filter:blur(6px); /* efek kaca (optional tapi bagus) */
-            padding:12px 0;
+            padding:8px 5px;
             display:flex;
             justify-content:center;
             gap:10px;
             position:sticky;
             top:0;
             left:0;
+            z-index: 1000;
             border-radius:10px;
-        
+            flex-wrap:wrap;
         }
+       
         .menu a.active{
             background: rgba(105,76,13,0.4);
             color:#D4AF37;
@@ -232,14 +240,14 @@
             background: #caa24c;
             color: rgb(20, 15, 15);
         }
+        h3{
+        font-size:22px;
+        }
 
         h5 {
             font-family: 'Cormorant Garamond', serif;
             font-weight: 400;
-            font-size: 12px;
-        }
-
-        h5 {
+            font-size: 16px;
             margin-bottom: 5px;
         }
 
@@ -273,8 +281,8 @@
         }
 
         .circle {
-            width: 45px;
-            height: 45px;
+            width: 60px;
+            height: 60px;
             background: linear-gradient(135deg, #8c6a2f, #caa24c, #6f5223);
             backdrop-filter: blur(5px);
             border-radius: 50%;
@@ -283,7 +291,7 @@
             flex-direction: column;
             align-items: center;
             justify-content: center;
-            font-size: 13px;
+            font-size: 16px;
             font-weight: bold;
             border: 2px solid #e6c97a;
             /* outline gold */
@@ -300,17 +308,19 @@
             width:100%;
             max-width:1100px;
             margin:auto;
-            padding:40px;;
+            padding:20px;
             text-align:center;
             border-radius: 15px;
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
         }
 
 
-        #isi{
+        #isi {
             background:
             linear-gradient(rgba(255,242,230,0.7), rgba(248,211,173,0.3)),
             url("bg-undangan.jpg");
+            font-size:16px;
+            line-height:1.6;
             background-size: cover;
             background-position:center;
             background-attachment: fixed;
@@ -342,7 +352,7 @@
 
         .nama {
             font-family: 'Great Vibes', cursive;
-            font-size: 40px;
+            font-size: 28px;
             color: gold;
             font-size: 35px;
             color: #b48a5a;
@@ -379,7 +389,7 @@
             width:100%;
             min-height:100vh;
             background:url("bg-undangan.jpg") center/cover no-repeat;
-            background-attachment:fixed;
+            background-attachment:scroll;
             background-position:center;
             background-repeat:no-repeat;
             background-size:cover;
@@ -410,7 +420,7 @@
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
-            gap: 20px;
+            gap: 15px;
           
         }
        .gallery img{
@@ -429,32 +439,37 @@
             linear-gradient(135deg,#8c6a2f,#d4af37,#fff1b0,#caa24c,#6f5223) border-box;
         }
         .foto{
-width:260px;
-height:180px;
-background:#111;
-display:flex;
-align-items:center;
-justify-content:center;
-border-radius:12px;
-overflow:hidden;
+            width:260px;
+            background:#111;
+            display:flex;
+            align-items:center;
+            justify-content:center;
+            border-radius:12px;
+            overflow:hidden;
 
-/* outline emas metallic */
-border:3px solid transparent;
-background:
-linear-gradient(#111,#111) padding-box,
-linear-gradient(135deg,#8c6a2f,#d4af37,#fff1b0,#caa24c,#6f5223) border-box;
-}
+            /* outline emas metallic */
+            border:3px solid transparent;
+            background:
+            linear-gradient(#111,#111) padding-box,
+            linear-gradient(135deg,#8c6a2f,#d4af37,#fff1b0,#caa24c,#6f5223) border-box;
+            }
 
-.foto img{
-max-width:100%;
-max-height:100%;
-object-fit:contain;
-}
+        .foto img{
+            width:100%;
+            height:auto; 
+            display:block;
+          
+            }
+
         @media (max-width:768px){
 
-            /* CSS untuk layar kecil (HP) */
+        .foto{
+            width:45%;
+            }
 
         }
+
+
 
         .gallery img:hover{
             transform:scale(1.06);
@@ -486,7 +501,8 @@ object-fit:contain;
 
 
         button {
-            padding: 10px 20px;
+            padding: 12px 20px;
+            font-size:16px
             background: #b48a5a;
             color: white;
             border: none;
@@ -581,7 +597,7 @@ object-fit:contain;
           
             <h3 id="galeri">Galeri Foto</h3>
 
-            <div id="lightbox" class="lightbox" 
+            <div id="lightbox" class="lightbox">
             <img id="lightbox-img">
             </div>
 
